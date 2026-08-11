@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oficinas · Lisicki, Litvin &amp; Abelovich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --petroleo:#0e4a5c;
+    --teal:#1d9e94;
+    --celeste:#4db8d6;
+    --gris:#7e8b93;
+    --blanco:#ffffff;
+    --borde:#dce8ee;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Jost',sans-serif;
+    background:#f3f8fb;
+    min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    padding:48px 24px;
+  }
+
+  .grilla{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+    width:100%;max-width:1080px;
+  }
+  .oficina{
+    display:block;text-decoration:none;background:var(--blanco);
+    border:1px solid var(--borde);border-radius:16px;
+    padding:30px 28px 26px;position:relative;overflow:hidden;
+    box-shadow:0 6px 24px rgba(14,74,92,.06);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .oficina::after{
+    content:'';position:absolute;left:0;top:0;height:100%;width:4px;
+    background:linear-gradient(180deg,var(--celeste),var(--teal));
+    transform:scaleY(0);transform-origin:top;transition:transform .3s ease;
+  }
+  .oficina:hover,.oficina:focus-visible{
+    transform:translateY(-4px);
+    box-shadow:0 16px 38px rgba(14,74,92,.14);
+    border-color:var(--teal);
+  }
+  .oficina:hover::after,.oficina:focus-visible::after{transform:scaleY(1)}
+  .oficina:focus-visible{outline:3px solid var(--celeste);outline-offset:3px}
+
+  .oficina .num{
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:.2em;color:var(--celeste);text-transform:uppercase;
+  }
+  .oficina h2{
+    margin-top:12px;font-size:26px;font-weight:600;color:var(--petroleo);
+    letter-spacing:-.3px;
+  }
+  .oficina .region{
+    margin-top:4px;font-size:13.5px;color:var(--gris);letter-spacing:.02em;
+  }
+  .oficina .cta{
+    margin-top:24px;display:inline-flex;align-items:center;gap:10px;
+    font-size:14px;font-weight:600;color:var(--petroleo);
+  }
+  .oficina .cta .flecha{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--petroleo);color:#fff;font-size:14px;
+    transition:background .25s ease,transform .25s ease;
+  }
+  .oficina:hover .cta .flecha{background:var(--teal);transform:translateX(4px)}
+
+  @media(max-width:900px){.grilla{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grilla{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+  <!--
+    HIPERVINCULOS: reemplaza el href="#" de cada tarjeta por la URL de cada firma.
+    Ej.: <a class="oficina" href="caba.html">  o  href="https://tusitio.com/caba"
+  -->
+  <nav class="grilla" aria-label="Oficinas">
+
+    <a class="oficina" href="firmas/bs-as.html" target="_blank" rel="noopener">
+      <h2>CABA</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+    <a class="oficina" href="firmas/tigre.html" target="_blank" rel="noopener">
+      <h2>Tigre</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+    <a class="oficina" href="firmas/corrientes.html" target="_blank" rel="noopener">
+      <h2>Corrientes</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+    <a class="oficina" href="firmas/neuquen.html" target="_blank" rel="noopener">
+      <h2>Neuquén</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+    <a class="oficina" href="firmas/cordoba.html" target="_blank" rel="noopener">
+      <h2>Córdoba</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+    <a class="oficina" href="firmas/rosario.html" target="_blank" rel="noopener">
+      <h2>Rosario</h2>
+      <span class="cta">Ir a la firma <span class="flecha">&rarr;</span></span>
+    </a>
+
+  </nav>
+
+</body>
+</html>
